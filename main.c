@@ -18,29 +18,56 @@ int main() {
                 printf("Ingresa un número binario: ");
                 scanf("%s", entrada);
                 decimal = binarioADecimal(entrada);
-                printf("Decimal: %d\n", decimal);
+                if (decimal == -1) {
+                    printf("Número binario inválido.\n");
+                } else {
+                    printf("Decimal: %d\n", decimal);
+                }
                 break;
+
             case 2:
                 printf("Ingresa un número decimal: ");
                 scanf("%d", &decimal);
                 decimalABinario(decimal, resultado);
                 printf("Binario: %s\n", resultado);
                 break;
+
             case 3:
                 printf("Ingresa un número decimal: ");
                 scanf("%d", &decimal);
                 decimalAHexadecimal(decimal, resultado);
                 printf("Hexadecimal: %s\n", resultado);
                 break;
+
             case 4:
                 printf("Ingresa un número hexadecimal (sin 0x): ");
                 scanf("%s", entrada);
                 decimal = hexadecimalADecimal(entrada);
-                printf("Decimal: %d\n", decimal);
+                if (decimal == -1) {
+                    printf("Número hexadecimal inválido.\n");
+                } else {
+                    printf("Decimal: %d\n", decimal);
+                }
                 break;
+
+            case 5:
+                printf("Ingresa un número binario: ");
+                scanf("%s", entrada);
+                binarioAHexadecimal(entrada, resultado);
+                printf("Hexadecimal: %s\n", resultado);
+                break;
+
+            case 6:
+                printf("Ingresa un número hexadecimal (sin 0x): ");
+                scanf("%s", entrada);
+                hexadecimalABinario(entrada, resultado);
+                printf("Binario: %s\n", resultado);
+                break;
+
             case 0:
                 printf("Saliendo...\n");
                 break;
+
             default:
                 printf("Opción no válida\n");
         }
