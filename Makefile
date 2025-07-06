@@ -1,14 +1,11 @@
 CC=gcc
 Cflags=-c -I.
 
-convertidor: main.o funciones.o funciones.h
-	$(CC) -o convertidor main.o funciones.o
+convertidor: main.o
+	$(CC) -o convertidor main.o
 
 main.o: main.c
 	$(CC) $(Cflags) main.c
-
-funciones.o: funciones.c
-	$(CC) $(Cflags) funciones.c
 
 .PHONY: clean
 clean:
